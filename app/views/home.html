@@ -1,0 +1,46 @@
+<br><br>
+<label>Gender filter</label>&nbsp;&nbsp; 
+<button ng-click="fetchMenuCategory('all')" id="activateAll" ng-class="{on: model.activate_all}"><b>All</b></button>&nbsp;&nbsp;
+<button ng-click="fetchMenuCategory('male')" id="activateMale" ng-class="{on: model.activate_male}"><b>Male</b></button> &nbsp;&nbsp;
+<button ng-click="fetchMenuCategory('female')" id="activateFemale" ng-class="{on: model.activate_female}"><b>Female</b></button><br><br><br>
+
+<div class="row">
+	<div class="col-md-9" >
+		<div class="row"> 
+			<div class="col-md-4" ng-repeat="menu  in model.menuResults">
+				<div class="panel panel-default" ng-if="menu.type ==model.gender || model.activate_all ==true" style=" cursor: pointer; cursor: hand;" ng-click="selectedItem(menu)">
+				  <div class="panel-heading">
+				    <!-- <h3 class="panel-title">Panel title</h3> -->
+				    <img ng-src="images/{{menu.image}}" alt="Smiley face" height="150" width="240">
+				  </div>
+				  <div class="panel-body hovering">
+				    <label>{{menu.item}}</label>  
+				    <br><label>₹{{menu.price}}</label>
+				    <p>{{menu.description}}</p> 
+				  </div>
+				</div>
+			</div>
+		</div>
+
+	</div> 
+</div>
+
+
+<style type="text/css"> 
+	#activateAll.on {
+    background-color: #E57474;
+    color: white;
+	}
+	#activateMale.on {
+    background-color: green;
+     color: white;
+	}
+	#activateFemale.on {
+    background-color: #E57474;
+     color: white;
+	}
+	.panel-body.hovering:hover{
+		background-color: #E8E8E8 ;
+	}
+</style>
+

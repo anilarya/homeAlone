@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <!-- start: CSS -->
+    <link href="styles/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/css/style.css" rel="stylesheet">
+    <!-- <link href="styles/css/retina.min.css" rel="stylesheet">  -->
+    <!-- end: CSS -->
+    <link rel="stylesheet" href="app_components/kendo-ui/styles/kendo.common-bootstrap.min.css"/>
+    <link rel="stylesheet" href="app_components/kendo-ui/styles/kendo.silver.min.css"/>
+    <link rel="stylesheet" href="app_components/kendo-ui/styles/kendo.bootstrap.mobile.min.css"/>
+
+    <link rel="stylesheet" href="app_components/kendo-ui/styles/kendo.dataviz.min.css"/>
+    <link rel="stylesheet" href="app_components/kendo-ui/styles/kendo.dataviz.bootstrap.min.css"/>
+    <link rel="stylesheet" href="app_components/kendo-ui/styles/kendo.dataviz.mobile.min.css"/>
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <!-- endbuild -->
+  </head>
+  <body ng-app="homeAloneApp"  style="color:black">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->  
+<!-- <div ng-controller="DashboardCtrl"> -->
+    <nav class="navbar navbar-default" role="navigation" style="background-color :#E57474">
+         {{model.choosen_location}}
+        <div class="navbar-header" style="float:none; text-align: center;">
+            <font size="5" color="white"><b>Home Alone</b></font> 
+        </div> 
+
+    </nav>  
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== --> 
+         <div ui-view></div>
+    </div>
+
+   <div class="navbar navbar-inverse navbar-fixed-bottom" style="background-color : #6D6F71;  border-color: red">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> 
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav" ng-controller="DashboardCtrl">
+          <li ng-class="{active:isActive('/')}"><a ui-sref="/" ><font color="white"> <b>Choose Location</b></font></a></li>
+          <li ng-class="{active:isActive('/home/')}"><a ui-sref="home"><font color="white"> <b>Chooses Homes</b></font></a></li>
+         <!--  <li ng-class="{active:isActive('/place_order')}"><a ui-sref="order"><font color="white"> <b>Place order</b></font></a></li>
+          <li ng-class="{active:isActive('/order_history')}"><a ui-sref="order_history"><font color="white"> <b>Order history</b></font></a></li>
+          <li ng-class="{active:isActive('/contact')}"><a ui-sref="contact"><font color="white"> <b>Contact us</b></font></a></li>
+          <li ng-class="{active:isActive('')}"><a  href="http://about.eatloapp.com/" target="_blank"><font color="white"> <b> About us</b></font></a></li> -->
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+<!-- </div> -->
+
+
+     
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <script src="app_components/kendo-ui/js/kendo.all.min.js"></script>
+    <script src="app_components/angular-kendo-ui/build/angular-kendo.min.js"></script>
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script> 
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/services/dashboard.js"></script>
+        <script src="scripts/services/home.js"></script>
+        <script src="scripts/controllers/home.js"></script> 
+        <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+    "count": 8,
+    "next": null,
+    "previous": null,
+    "results":  [
+            {
+                "location": "HSR Layout",
+                "id": 345345
+            },
+            {
+                "location": "Koramangala",
+                "id": 2
+            },
+            {
+                "location": "Indiranagar",
+                "id": 3
+            },
+            {
+                "location": "AKR Tech Park",
+                "id": 4
+            },
+            {
+                "location": "Sarjapur",
+                "id": 5
+            },
+            {
+                "location": "Domlur(Lunch)",
+                "id": 6
+            },
+            {
+                "location": "Belandur(Lunch)",
+                "id": 7
+            },
+            {
+                "location": "Embassy Tech Village(Lunch)",
+                "id": 8
+            }
+        ] 
+}
